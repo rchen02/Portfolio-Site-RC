@@ -32,6 +32,7 @@ body{
   h2{
     font-size: 2.25em;
     font-weight: 700;
+    text-align: center;
   }
 
   h3{
@@ -76,7 +77,8 @@ a:focus {
   padding:10px;
   border-radius: 2px;
   border: 2px solid #A3D39C;
-  transition:0.2s opacity;
+
+  transition:0.5s background-color;
 }
 
 .button:hover{
@@ -87,8 +89,9 @@ a:focus {
   padding:10px;
   border-radius: 2px;
   border: 2px solid #A3D39C;
-  transition:0.2s opacity;
 }
+
+
 
 .button.contact{
   display:inline-block;
@@ -98,19 +101,22 @@ a:focus {
   padding:10px;
   border-radius: 2px;
   border: 2px solid #E35F56;
-  transition:0.2s opacity;
+  transition-property: opacity;
 }
+
+
+
 
 .button.contact:hover{
   display:inline-block;
-  background-color:#ffffff;
-  color:#E35F56 !important;
+  background-color:#E35F56;
+  color:#ffffff !important;
   font-weight: 700;
   padding:10px;
   border-radius: 2px;
-  border: 2px solid #E35F56;
-  transition:0.2s opacity;
+  opacity:0.8;
 }
+
 
 .scroll{
   display:inline-block;
@@ -147,6 +153,9 @@ picture img{
 /* Layout styling */
 .container {
   padding:0 15px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #work .row{
@@ -202,11 +211,6 @@ picture img{
   margin:0px 50px;
 }
 
-#skills .row {
-  display: inline-block;
-  margin:auto 50px;
-  vertical-align: top;
-}
 
 
 header{
@@ -246,6 +250,9 @@ nav{
   display: inline-block;
   width: 100%
 }
+
+
+
 main{
   padding-top:133px;
 
@@ -278,24 +285,128 @@ padding:0;
   display: inline-block;
 }
 
-
-
-#mystory .row{
-  display: inline-block;
-  max-width: 400px;
+#about h2{
+  text-align: left;
 }
 
-#about{align-items: center;
-
+.cloudleft{
+  animation-duration:40s;
+  animation-name: cloud-move;
+  animation-iteration-count: infinite;
+  animation-direction: alterante;
+  animation-timing-function: linear;
 }
-#about .mystory{
-  display: inline-block;
-  margin:20px auto;
+.cloudright{
+  animation-duration:30s;
+  animation-name: cloud-move-reverse;
+  animation-iteration-count: infinite;
+  animation-direction: alterante;
+  animation-timing-function: linear;
 }
-#about .row{
-  vertical-align: top;
-margin: 15px;}
 
-#about #background{
-margin: 15px;
+@keyframes color-tree {
+  0% {fill: #2f2e41;}
+  50% {fill: #76af6e;}
+  100% {fill:#ff1654; }
+}
+
+@keyframes color-bush {
+
+  0% {fill: #2f2e41;}
+  25% {fill: #f4ed1a;}
+  50% {fill: #a554ce;}
+  100% {fill:#ff1654; }
+}
+
+@keyframes color-mountain {
+
+  0% {fill: #2f2e41;}
+  25% {fill: #f4ed1a;}
+  50% {fill: #a554ce;}
+  100% {fill:#ff1654; }
+}
+.mountain {
+  animation: 4s color-tree infinite alternate linear;
+}
+
+.tree1 {
+  animation: 4s color-tree infinite alternate linear;
+}
+
+.tree2 {
+  animation: 4s color-bush infinite alternate linear;
+}
+
+
+@keyframes cloud-move {
+  from {transform: translate(0,50px);}
+  to{transform: translate(400px,50px);}
+}
+
+
+@keyframes cloud-move-reverse {
+  from {transform: translate(200px,48px);}
+  to {transform: translate(0px,48px);}
+}
+/* ==============================
+Medium devices (640px and larger)
+================================= */
+@media only screen and (min-width: 640px) {
+  header {
+    text-align: unset;
+    padding: 20px 0 13px;
+  }
+
+  header nav {
+      width: auto;
+      float: right;
+      margin-top: 4px;
+    }
+
+
+
+    main{
+      padding-top: 99px;
+    }
+
+    #hero span{
+      display: block;
+    }
+
+    .col-md-6 {
+      width: 50%;
+    }
+
+    [class*="col-"] {
+      float: left;
+      padding: 10px;
+    }
+
+
+    .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}
+
+
+
+
+/* ==============================
+Large devices (1024px or larger)
+================================= */
+@media only screen and (min-width: 1024px) {
+
+  .col-lg-7 {
+    width: 58.33%;}
+
+  .col-lg-5 {
+    width: 41.66%;}
+}
+
+/* ==============================
+X-large devices (1440px or larger)
+================================= */
+@media only screen and (min-width: 1440px) {
 }
